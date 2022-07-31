@@ -41,6 +41,26 @@ tabs.forEach((tab) => {
   });
 });
 
+/*==================== MixiTup filter ====================*/
+const mixer = mixitup('.project__container', {
+    selectors: {
+        target: '.project__content'
+    },
+    animation: {
+        duration: 400
+    }
+});
+
+const linkProject = document.querySelectorAll('.project__item')
+
+function activeProject() {
+    if (linkProject) {
+        linkProject.forEach(l => l.classList.remove('active-project'))
+        this.classList.add('active-project')
+    }
+}
+linkProject.forEach(l => l.addEventListener('click', activeProject))
+
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
 
